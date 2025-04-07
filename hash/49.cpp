@@ -7,6 +7,7 @@
 using namespace std;
 
 vector<vector<string>> group(vector<string>& strs){
+    vector<vector<string>> ans;
     unordered_map<string, vector<string>> map;
     for(string& str :strs){
         string key = str;
@@ -14,7 +15,6 @@ vector<vector<string>> group(vector<string>& strs){
         map[key].emplace_back(str);
     }
 
-    vector<vector<string>> ans;
     for (auto it = map.begin(); it != map.end(); it++) {
         ans.emplace_back(it->second);
     }

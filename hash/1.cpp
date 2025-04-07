@@ -1,8 +1,20 @@
-//两数之和
 #include <iostream>
 #include <vector>
 #include <unordered_map>
 using namespace std;
+
+// 查找两数之和等于目标值的函数
+vector<int> twoSum(vector<int>& nums, int target) {
+    unordered_map<int, int> hashmap;
+    for (int i = 0; i < nums.size(); i++) {
+        int it = target - nums[i];
+        if (hashmap.count(it)) {
+            return {hashmap[it], i};
+        }
+        hashmap[nums[i]] = i;
+    }
+    return {};
+}
 
 int main() {
     int target;
@@ -16,21 +28,7 @@ int main() {
         }
     }
 
-    unordered_map<int, int> hashmap;
-    bool found = false;
-    for (int i = 0; i < nums.size(); i++) {
-        int complement = target - nums[i];
-        if (hashmap.count(complement)) {
-            cout << hashmap[complement] << " " << i << endl;
-            found = true;
-            break;
-        }
-        hashmap[nums[i]] = i;
-    }
-
-    if (!found) {
-        cout << "null" << endl;
-    }
-
+    vector<int> result = twoSum(nums, target);
+    cout << result[0] << " " << result[1] << endl;
     return 0;
-} 
+}    
