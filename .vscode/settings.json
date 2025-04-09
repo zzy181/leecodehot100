@@ -3,6 +3,8 @@
         "vector": "cpp",
         "xstring": "cpp",
         "xhash": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp"
     }
 }
