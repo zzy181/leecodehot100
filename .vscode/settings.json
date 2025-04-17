@@ -5,6 +5,7 @@
         "xhash": "cpp",
         "unordered_map": "cpp",
         "iostream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "new": "cpp"
     }
 }
